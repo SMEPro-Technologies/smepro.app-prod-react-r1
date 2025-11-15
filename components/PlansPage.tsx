@@ -94,7 +94,7 @@ const PlansPage: React.FC<PlansPageProps> = ({ onSetHelperContext, onChoosePlan 
         <PaymentModal
           visible={showPaymentModal}
           onClose={() => setShowPaymentModal(false)}
-          includeAddon={selectedPlan.name === 'Level-Up'}
+          includeAddon={selectedPlan.id === 'solo-plus' || selectedPlan.id === 'business-adv'}
         />
       )}
     </div>
