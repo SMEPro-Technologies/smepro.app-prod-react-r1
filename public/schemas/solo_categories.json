@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SMEPro Solo Signup Categories",
+  "description": "Production-ready schema for SMEPro Solo signup criteria, including categories, sub-categories, and a static list of objectives.",
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": [
+        "Entertainment & Creative Arts",
+        "Professional Services",
+        "Entrepreneurship & Startups",
+        "Education & Knowledge Work",
+        "Lifestyle & Independent Professions"
+      ]
+    },
+    "subCategory": { "type": "string" },
+    "objective": { "type": "string" }
+  },
+  "required": ["category", "subCategory", "objective"],
+  "allOf": [
+    {
+      "if": { "properties": { "category": { "const": "Entertainment & Creative Arts" } } },
+      "then": { "properties": { "subCategory": { "enum": ["Music", "Visual Arts", "Film & Video", "Performing Arts", "Fashion & Design", "Writing & Publishing"] } } }
+    },
+    {
+      "if": { "properties": { "category": { "const": "Professional Services" } } },
+      "then": { "properties": { "subCategory": { "enum": ["Management Consulting", "Freelance Tech & Development", "Legal & Compliance Services", "Financial Advisory"] } } }
+    },
+    {
+      "if": { "properties": { "category": { "const": "Entrepreneurship & Startups" } } },
+      "then": { "properties": { "subCategory": { "enum": ["Startup Founder", "E-commerce Entrepreneur", "Social Enterprise", "Innovation & Tech Commercialization"] } } }
+    },
+    {
+      "if": { "properties": { "category": { "const": "Education & Knowledge Work" } } },
+      "then": { "properties": { "subCategory": { "enum": ["Tutoring & Coaching", "Digital Content Creation", "Independent Research & Writing"] } } }
+    },
+    {
+      "if": { "properties": { "category": { "const": "Lifestyle & Independent Professions" } } },
+      "then": { "properties": { "subCategory": { "enum": ["Health & Wellness Coaching", "Culinary Arts", "Artisan Crafts & Trades", "Professional Photography"] } } }
+    },
+    { "if": { "properties": { "subCategory": { "const": "Music" } } }, "then": { "properties": { "objective": { "enum": ["Produce Album", "Build Audience", "Monetize Skills", "Book Gigs"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Visual Arts" } } }, "then": { "properties": { "objective": { "enum": ["Launch Portfolio", "Sell Artwork", "Build Audience", "Secure Commissions"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Film & Video" } } }, "then": { "properties": { "objective": { "enum": ["Produce Short Film", "Build YouTube Channel", "Monetize Content", "Freelance Videography"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Performing Arts" } } }, "then": { "properties": { "objective": { "enum": ["Secure Auditions", "Produce a Show", "Build Audience", "Teach a Workshop"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Fashion & Design" } } }, "then": { "properties": { "objective": { "enum": ["Launch Clothing Line", "Build Portfolio", "Freelance Design Work", "Open E-commerce Store"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Writing & Publishing" } } }, "then": { "properties": { "objective": { "enum": ["Publish a Book", "Build Blog Audience", "Freelance Writing Gigs", "Start a Newsletter"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Management Consulting" } } }, "then": { "properties": { "objective": { "enum": ["Acquire Clients", "Develop Frameworks", "Build Personal Brand", "Specialize in a Niche"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Freelance Tech & Development" } } }, "then": { "properties": { "objective": { "enum": ["Find Freelance Projects", "Build a SaaS Product", "Contribute to Open Source", "Automate Workflows"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Legal & Compliance Services" } } }, "then": { "properties": { "objective": { "enum": ["Start Solo Practice", "Offer Niche Services", "Automate Document Review", "Client Acquisition"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Financial Advisory" } } }, "then": { "properties": { "objective": { "enum": ["Build Client Base", "Develop Financial Models", "Offer Specialized Advice", "Automate Reporting"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Startup Founder" } } }, "then": { "properties": { "objective": { "enum": ["Secure Funding", "Build MVP", "Achieve Product-Market Fit", "Scale Operations"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "E-commerce Entrepreneur" } } }, "then": { "properties": { "objective": { "enum": ["Launch Online Store", "Optimize Supply Chain", "Market Products", "Increase Conversion Rate"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Social Enterprise" } } }, "then": { "properties": { "objective": { "enum": ["Define Social Impact", "Secure Grants/Funding", "Measure Outcomes", "Build Community"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Innovation & Tech Commercialization" } } }, "then": { "properties": { "objective": { "enum": ["Patent Technology", "Find Market Application", "Create Business Plan", "License Technology"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Tutoring & Coaching" } } }, "then": { "properties": { "objective": { "enum": ["Acquire Students/Clients", "Develop Curriculum", "Build Online Platform", "Market Services"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Digital Content Creation" } } }, "then": { "properties": { "objective": { "enum": ["Build Audience", "Monetize Content", "Create Online Course", "Launch Podcast/YouTube"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Independent Research & Writing" } } }, "then": { "properties": { "objective": { "enum": ["Publish Research Paper", "Write a Book", "Secure Grants", "Consulting"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Health & Wellness Coaching" } } }, "then": { "properties": { "objective": { "enum": ["Build Client Base", "Develop Coaching Programs", "Market Services", "Host Workshops"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Culinary Arts" } } }, "then": { "properties": { "objective": { "enum": ["Start Catering Business", "Personal Chef Services", "Launch Food Product", "Create Food Blog"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Artisan Crafts & Trades" } } }, "then": { "properties": { "objective": { "enum": ["Sell on Etsy/Marketplaces", "Teach Workshops", "Streamline Production", "Wholesale Orders"] } } } },
+    { "if": { "properties": { "subCategory": { "const": "Professional Photography" } } }, "then": { "properties": { "objective": { "enum": ["Build Portfolio", "Book Clients (Weddings, Portraits)", "Sell Stock Photos", "Specialize in a Niche"] } } } }
+  ]
+}

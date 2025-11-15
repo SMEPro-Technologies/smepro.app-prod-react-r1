@@ -1,0 +1,7 @@
+{
+  "name": "SMEPro.app - Prod",
+  "description": "Subject Matter Expert AI. Safe. Actionable Intelligence. SMEPro empowers anyone with artificial super intelligence, turning ideas into actionable outcomes with a sophisticated, narrowly-trained SME AI Model.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
