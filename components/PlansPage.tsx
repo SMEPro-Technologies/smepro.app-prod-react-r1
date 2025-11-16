@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { SmeHelperContext, SubscriptionPlan } from '../types';
+import { SmeHelperContext, SubscriptionPlanDetails } from '../types';
 import PlanComparisonTable from './PlanComparisonTable';
 import PaymentModal from './modals/PaymentModal';
 
 interface PlansPageProps {
   onSetHelperContext: (context: SmeHelperContext) => void;
   onChoosePlan: (
-    plan: SubscriptionPlan,
+    plan: SubscriptionPlanDetails,
     billingCycle: 'monthly' | 'annual',
     price: number,
     priceId: string
@@ -15,13 +15,13 @@ interface PlansPageProps {
 
 const PlansPage: React.FC<PlansPageProps> = ({ onSetHelperContext, onChoosePlan }) => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
-  const [selectedPlan, setSelectedPlan] = useState<SubscriptionPlan | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<SubscriptionPlanDetails | null>(null);
   const [selectedPrice, setSelectedPrice] = useState<number>(0);
   const [selectedPriceId, setSelectedPriceId] = useState<string>('');
   const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   const handleChoosePlan = (
-    plan: SubscriptionPlan,
+    plan: SubscriptionPlanDetails,
     cycle: 'monthly' | 'annual',
     price: number,
     priceId: string
